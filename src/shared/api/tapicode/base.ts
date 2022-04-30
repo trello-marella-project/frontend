@@ -1,9 +1,10 @@
 import { notification } from "antd";
 import axios from "axios";
 
-export const baseURL = "http://localhost:5001/api";
+// TODO add API_URL to .env
+const API_URL = "http://localhost:5001/api";
 
-export const api = axios.create({ baseURL });
+export const api = axios.create({ baseURL: API_URL });
 
 api.interceptors.response.use(undefined, (error) => {
   notification.error({

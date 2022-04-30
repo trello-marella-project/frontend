@@ -1,2 +1,1 @@
-export * from "./routes";
-export * from "./api";
+export * as tapicodeApi from "./tapicode";
