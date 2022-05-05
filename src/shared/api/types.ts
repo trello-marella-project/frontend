@@ -12,6 +12,11 @@ export namespace Request {
 }
 
 export namespace Response {
+  export interface Refresh {
+    accessToken: string;
+    refreshToken: string;
+  }
+
   export interface Login {
     accessToken: string;
     refreshToken: string;
