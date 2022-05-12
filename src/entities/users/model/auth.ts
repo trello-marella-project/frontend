@@ -1,11 +1,27 @@
 import { tapicodeApi } from "shared/api";
-import { createEffect, createStore } from "effector";
-import { Request } from "shared/api/types";
+import { createEvent, createStore } from "effector";
 
-const loginUserFx = createEffect((values: Request.Login) => {
-  return tapicodeApi.auth.loginUser(values);
-});
+type UserInfoT = {
+  email: string,
+  username: string,
+};
 
-export const $user = createStore({}).on(loginUserFx.doneData, (_, payload) => ({
+const saveUserInfo = createEvent<UserInfoT>();
+
+// const loginUserFx = createEffect(
+//   (values: Parameters<typeof tapicodeApi.auth.loginUser>["0"]) => {
+//     return tapicodeApi.auth.loginUser(values);
+//   }
+// );
+
+export const $user = createStore({}).on(saveUserInfo, (_, payload) => ({
   ...payload,
 }));
+
+// export const effects = {
+//   loginUserFx,
+// };
+
+export const events = {
+  saveUserInfo,
+};

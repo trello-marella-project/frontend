@@ -16,4 +16,8 @@ export const publicRoutes: Routes = [
     path: PUBLIC_PATH.ACTIVATION,
     component: pages.Activate,
   },
+  {
+    path: PUBLIC_PATH.NOT_ACTIVATED,
+    component: pages.NotActivated,
+  },
 ];
