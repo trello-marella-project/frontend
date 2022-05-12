@@ -1,8 +1,9 @@
 export enum PUBLIC_PATH {
   LOGIN = "/login",
   REGISTER = "/register",
-  ACTIVATION = "/activation",
-  NOT_ACTIVATED = "/not-activated",
+  ACTIVATED_EMAIL = "/activated-email",
+  NOT_ACTIVATED_EMAIL = "/not-activated-email",
+  ACTIVATE_EMAIL = "/activate-email",
 }
 
 export enum PRIVATE_ADMIN_PATH {

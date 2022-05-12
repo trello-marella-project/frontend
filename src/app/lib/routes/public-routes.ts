@@ -13,11 +13,15 @@ export const publicRoutes: Routes = [
     default: true,
   },
   {
-    path: PUBLIC_PATH.ACTIVATION,
-    component: pages.Activate,
+    path: PUBLIC_PATH.ACTIVATED_EMAIL,
+    component: pages.ActivatedEmail,
   },
   {
-    path: PUBLIC_PATH.NOT_ACTIVATED,
-    component: pages.NotActivated,
+    path: PUBLIC_PATH.NOT_ACTIVATED_EMAIL,
+    component: pages.NotActivatedEmail,
+  },
+  {
+    path: PUBLIC_PATH.ACTIVATE_EMAIL,
+    component: pages.ActivateEmail,
   },
 ];

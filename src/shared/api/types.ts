@@ -17,6 +17,10 @@ export namespace Response {
     refreshToken: string;
   }
 
+  export interface Register {
+    status: string;
+  }
+
   export interface Login {
     accessToken: string;
     refreshToken: string;

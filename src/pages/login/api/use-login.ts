@@ -20,14 +20,13 @@ export const useLogin = () => {
       try {
         startLoading();
         const { data } = await tapicodeApi.auth.loginUser(values);
-        console.log("data", data);
         updateTokens({
           accessToken: data.accessToken,
           refreshToken: data.refreshToken,
         });
         localStorage.setItem("role", data.user.role);
         setRole(data.user.role);
-        if (!data.user.is_enabled) navigate(PUBLIC_PATH.NOT_ACTIVATED);
+        if (!data.user.is_enabled) navigate(PUBLIC_PATH.NOT_ACTIVATED_EMAIL);
         if (data.user.role === "ADMIN") navigate(PRIVATE_ADMIN_PATH.SPACES);
         if (data.user.role === "USER") navigate(PRIVATE_USER_PATH.REPORTS);
       } catch (error) {

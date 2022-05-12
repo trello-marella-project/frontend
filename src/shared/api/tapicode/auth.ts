@@ -7,6 +7,6 @@ export const loginUser = (values: Request.Login) => {
 };
 
 export const registerUser = (values: Request.Register) =>
-  api.post(routes.register, values);
+  api.post<Response.Register>(routes.register, values);
 
 export const tokenRefresh = () => api.get<Response.Refresh>(routes.refresh);
