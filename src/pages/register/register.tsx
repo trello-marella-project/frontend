@@ -2,13 +2,14 @@ import { UseRegister } from "./lib/use-register";
 import { Button, Form, Input, Typography } from "antd";
 import { Link } from "react-router-dom";
 import { PUBLIC_PATH } from "shared/config";
+import { AuthLayout } from "widgets/auth-layout";
 
 export const Register = () => {
   const { handleRegister, isLoading } = UseRegister();
 
   return (
-    <div>
-      <Typography.Title>Вход</Typography.Title>
+    <AuthLayout>
+      <Typography.Title level={2}>Регистрация</Typography.Title>
       <Form onFinish={handleRegister}>
         <Form.Item
           name="email"
@@ -41,7 +42,12 @@ export const Register = () => {
           <Input placeholder="Пароль" type="password" />
         </Form.Item>
         <Form.Item>
-          <Button htmlType="submit" loading={isLoading} type="primary">
+          <Button
+            htmlType="submit"
+            loading={isLoading}
+            type="primary"
+            size="large"
+          >
             Отправить
           </Button>
         </Form.Item>
@@ -51,6 +57,6 @@ export const Register = () => {
           </Link>
         </Form.Item>
       </Form>
-    </div>
+    </AuthLayout>
   );
 };

@@ -2,7 +2,7 @@ import { notification } from "antd";
 import axios from "axios";
 
 // TODO add API_URL to .env
-const API_URL = "http://localhost:5001/api";
+const API_URL = "http://localhost:8080/api";
 
 export const api = axios.create({ baseURL: API_URL });
 

@@ -1,14 +1,15 @@
 import { Button, Form, Input, Typography } from "antd";
 import { Link } from "react-router-dom";
 import { PUBLIC_PATH } from "shared/config";
+import { AuthLayout } from "widgets/auth-layout";
 import { useLogin } from "./api/use-login";
 
 export const Login = () => {
   const { isLoading, handleLogin } = useLogin();
 
   return (
-    <div>
-      <Typography.Title>Вход</Typography.Title>
+    <AuthLayout>
+      <Typography.Title level={2}>Вход</Typography.Title>
       <Form onFinish={handleLogin}>
         <Form.Item
           name="email"
@@ -23,7 +24,12 @@ export const Login = () => {
           <Input placeholder="Пароль" type="password" />
         </Form.Item>
         <Form.Item>
-          <Button htmlType="submit" loading={isLoading} type="primary">
+          <Button
+            htmlType="submit"
+            loading={isLoading}
+            type="primary"
+            size="large"
+          >
             Отправить
           </Button>
         </Form.Item>
@@ -33,6 +39,6 @@ export const Login = () => {
           </Link>
         </Form.Item>
       </Form>
-    </div>
+    </AuthLayout>
   );
 };
