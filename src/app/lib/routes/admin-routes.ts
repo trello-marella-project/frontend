@@ -4,7 +4,8 @@ import { PRIVATE_ADMIN_PATH } from "shared/config";
 
 export const adminRoutes: Routes = [
   {
-    path: PRIVATE_ADMIN_PATH.SPACES,
-    component: pages.Spaces,
+    path: PRIVATE_ADMIN_PATH.REPORTS,
+    component: pages.admin.Reports,
+    default: true,
   },
 ];

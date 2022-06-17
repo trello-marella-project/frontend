@@ -5,23 +5,23 @@ import { PUBLIC_PATH } from "shared/config";
 export const publicRoutes: Routes = [
   {
     path: PUBLIC_PATH.REGISTER,
-    component: pages.Register,
+    component: pages.pub.Register,
   },
   {
     path: PUBLIC_PATH.LOGIN,
-    component: pages.Login,
+    component: pages.pub.Login,
     default: true,
   },
   {
     path: PUBLIC_PATH.ACTIVATED_EMAIL,
-    component: pages.ActivatedEmail,
+    component: pages.pub.ActivatedEmail,
   },
   {
     path: PUBLIC_PATH.NOT_ACTIVATED_EMAIL,
-    component: pages.NotActivatedEmail,
+    component: pages.pub.NotActivatedEmail,
   },
   {
     path: PUBLIC_PATH.ACTIVATE_EMAIL,
-    component: pages.ActivateEmail,
+    component: pages.pub.ActivateEmail,
   },
 ];

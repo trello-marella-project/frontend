@@ -3,6 +3,7 @@ import "./styles/index.scss";
 import { Routing } from "features/routing";
 import { publicRoutes, userRoutes, adminRoutes } from "./lib";
 import { useAuthorization } from "../features/authorization";
+import { PrivateLayout } from "../widgets/private-layout";
 
 export const App = () => {
   const { role } = useAuthorization();
@@ -16,9 +17,9 @@ export const App = () => {
       );
     case "USER":
       return (
-        <div>
+        <PrivateLayout>
           <Routing routes={userRoutes} />
-        </div>
+        </PrivateLayout>
       );
     default:
       return (

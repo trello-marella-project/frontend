@@ -7,10 +7,11 @@ export enum PUBLIC_PATH {
 }
 
 export enum PRIVATE_ADMIN_PATH {
-  SPACES = "/spaces",
-  // SEARCH_SPACES = "/search",
+  REPORTS = "/reports",
 }
 
 export enum PRIVATE_USER_PATH {
-  REPORTS = "/reports",
+  SPACES = "/spaces",
+  SEARCH_SPACES = "/search",
+  PROFILE = "/profile",
 }
