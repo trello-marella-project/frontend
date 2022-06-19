@@ -1,6 +1,6 @@
 import { useIsLoading } from "features/helpers";
 import { useCallback } from "react";
-import { tapicodeApi } from "shared/api";
+import { typicodeApi } from "shared/api";
 import { updateTokens, useAuthorization } from "features/authorization";
 import { useNavigate } from "react-router";
 import {
@@ -19,7 +19,7 @@ export const useLogin = () => {
     async (values) => {
       try {
         startLoading();
-        const { data } = await tapicodeApi.auth.loginUser(values);
+        const { data } = await typicodeApi.auth.loginUser(values);
         updateTokens({
           accessToken: data.accessToken,
           refreshToken: data.refreshToken,
@@ -27,6 +27,7 @@ export const useLogin = () => {
         localStorage.setItem("role", data.user.role);
         setRole(data.user.role);
         if (!data.user.is_enabled) navigate(PUBLIC_PATH.NOT_ACTIVATED_EMAIL);
+
         if (data.user.role === "ADMIN") navigate(PRIVATE_ADMIN_PATH.REPORTS);
         if (data.user.role === "USER") navigate(PRIVATE_USER_PATH.SPACES);
       } catch (error) {

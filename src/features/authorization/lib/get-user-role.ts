@@ -1,4 +1,4 @@
-import { tapicodeApi } from "shared/api";
+import { typicodeApi } from "shared/api";
 import { updateTokens } from "./update-tokens";
 import { RoleT } from "./authorization-context";
 
@@ -10,7 +10,7 @@ export const getUserRole = async (): Promise<RoleT> => {
     return "VISITOR";
 
   try {
-    const { data } = await tapicodeApi.auth.tokenRefresh();
+    const { data } = await typicodeApi.auth.tokenRefresh();
     updateTokens(data);
 
     return role;

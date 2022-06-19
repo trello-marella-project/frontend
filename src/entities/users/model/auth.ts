@@ -1,16 +1,16 @@
-import { tapicodeApi } from "shared/api";
+import { typicodeApi } from "shared/api";
 import { createEvent, createStore } from "effector";
 
 type UserInfoT = {
-  email: string,
-  username: string,
+  email: string;
+  username: string;
 };
 
 const saveUserInfo = createEvent<UserInfoT>();
 
 // const loginUserFx = createEffect(
-//   (values: Parameters<typeof tapicodeApi.auth.loginUser>["0"]) => {
-//     return tapicodeApi.auth.loginUser(values);
+//   (values: Parameters<typeof typicodeApi.auth.loginUser>["0"]) => {
+//     return typicodeApi.auth.loginUser(values);
 //   }
 // );
 

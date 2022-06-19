@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useIsLoading } from "features/helpers";
-import { tapicodeApi } from "shared/api";
+import { typicodeApi } from "shared/api";
 
 import { useNavigate } from "react-router";
 import { notification } from "antd";
@@ -14,7 +14,7 @@ export const UseRegister = () => {
     async (values) => {
       try {
         startLoading();
-        const { status } = await tapicodeApi.auth.registerUser(values);
+        const { status } = await typicodeApi.auth.registerUser(values);
         if (status === 200) navigate(PUBLIC_PATH.ACTIVATE_EMAIL);
       } catch (error) {
         finishLoading();

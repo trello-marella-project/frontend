@@ -1,2 +1,2 @@
-export * as tapicodeApi from "./tapicode";
-export { api } from "./tapicode";
+export * as typicodeApi from "./typicode";
+export { api } from "./typicode";

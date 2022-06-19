@@ -31,4 +31,31 @@ export namespace Response {
       is_enabled: boolean;
     };
   }
+
+  export interface YoursSpaces {
+    spaces: {
+      space_id: number;
+      name: string;
+      is_public: boolean;
+      username: string;
+    }[];
+  }
+
+  export interface RecentSpaces {
+    spaces: {
+      space_id: number;
+      name: string;
+      is_public: boolean;
+      username: string;
+    }[];
+  }
+
+  export interface PermittedSpaces {
+    spaces: {
+      space_id: number;
+      name: string;
+      is_public: boolean;
+      username: string;
+    }[];
+  }
 }
